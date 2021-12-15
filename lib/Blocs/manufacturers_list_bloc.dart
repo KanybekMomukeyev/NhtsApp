@@ -11,7 +11,7 @@ import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:stream_transform/stream_transform.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 
-const _throttleDuration = Duration(seconds: 4);
+const _throttleDuration = Duration(milliseconds: 100);
 
 // ------------------------------------------------ EVENT ------------------------------------------------
 abstract class ManufacturersListEvent extends Equatable {
