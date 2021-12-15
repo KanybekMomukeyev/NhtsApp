@@ -44,7 +44,6 @@ class SqliteDatabaseClient {
           int id1 = await txn.rawInsert(
               'INSERT OR REPLACE INTO manufacturers(mfrid, page, mfrname, country) VALUES(?, ?, ?, ?)',
               manufacturer.databaseInsertValues(page: page));
-          debugPrint('inserted: $id1');
         }
       });
       debugPrint('saveValue: $saveValue');
@@ -61,7 +60,6 @@ class SqliteDatabaseClient {
           int id1 = await txn.rawInsert(
               'INSERT OR REPLACE INTO modelformakes(modelid, mfrid, makeid, makename, modelname) VALUES(?, ?, ?, ?, ?)',
               model.databaseInsertValues(manufacturrerId: mfrid));
-          debugPrint('inserted: $id1');
         }
       });
       debugPrint('saveValue: $saveValue');
