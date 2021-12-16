@@ -1,6 +1,13 @@
 # nhtsapp
 
 A Flutter project for listing all manufacturers and their models.
+Flutter (Channel Master, 2.9.0-1.0.pre.68, on macOS 11.1 20C69 darwin-x64, nullsafety)
+
+
+To run application:
+```
+flutter run 
+```
 
 ## Getting Started
 
@@ -15,11 +22,21 @@ Every part of logic like
  
  divided for testing, best practises of Solid principles. 
 
-This project is a starting point for a Flutter application.
+To run unit tests (business logic: database, request_api_client, bloc logic), run
+```
+flutter run test/ -d emulator-5554
+```
+Or, for only database
+```
+flutter run test/database_test -d emulator-5554
+```
+Or, for only list bloc
+```
+flutter run test/man_list_bloc_test -d emulator-5554
+```
 
-A few resources to get you started if this is your first Flutter project:
 
-- WebApp of this project you can view here:
+- Web version of this project you can view here:
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
