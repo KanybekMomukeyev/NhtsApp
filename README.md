@@ -35,9 +35,21 @@ Or, for only list bloc
 flutter run test/man_list_bloc_test -d emulator-5554
 ```
 
+# UPDATE
+According to latest documentaion Flutter, all tests related to Database, File IO, Network, Bloc 
+or specific logic of App Flow, should be written to Integration tests.
+
+so to run integrstion test, just run
+
+```
+flutter test integration_test/database_integration_test.dart -d <DEVICE_ID>
+```
+
+here DEVICE_ID is, the retturn of command ``` flutter devices ```
+
+
 
 - Web version of this project you can view here:
-
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 

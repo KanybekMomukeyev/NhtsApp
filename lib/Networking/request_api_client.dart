@@ -72,8 +72,11 @@ class RequestApiClient {
   }) async {
     debugPrint("|| ---- modelsForMake started ----- ||");
     try {
+      // nhtsa api gives error, if makeName contains "." or "," characters
+      final modifiedMakeName = makeName.replaceAll(".", "").replaceAll(",", "");
       var fullUrl = Uri.parse(Uri.encodeFull(
-          "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/$makeName?format=json"));
+          "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformake/$modifiedMakeName?format=json"));
+
       final response =
           await httpClient.get(fullUrl).timeout(const Duration(seconds: 30));
 

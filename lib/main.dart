@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io' as io;
-import 'package:path/path.dart';
+import 'package:path/path.dart' as path;
 import 'package:sqflite/sqflite.dart' as sqflite;
 import 'package:http/http.dart' as http;
 import 'package:nhtsapp/Networking/sqlite_database_client.dart';
@@ -30,7 +30,7 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   io.Directory _documentsDirectory = await getApplicationDocumentsDirectory();
-  String _path = join(_documentsDirectory.path, "nhtsapp_local.db");
+  String _path = path.join(_documentsDirectory.path, "nhtsapp_local.db");
   final _localSqliteDb = await sqflite.openDatabase(
     _path,
     version: 1,
